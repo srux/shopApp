@@ -438,6 +438,8 @@ a {
 }
 
 
+
+
 li.react-multi-carousel-item.CarousalItem.carousel-item-padding-40-px {
     width: 100% !important;
 }
@@ -502,3 +504,23 @@ li.react-multi-carousel-item.CarousalItem.carousel-item-padding-40-px {
     max-width: 100%;
 }
 }
+
+@media (max-width: 576px) {
+    // .hScroller {
+    //         .item {    margin-right: -40%;
+    //             .card {
+    //                 align-items: center;
+    //                 width: 100vw;
+    //             }
+    //     }
+    // }
+    .hScroller {
+    .Item {
+        margin-right:-40%;
+    }
+    .Item .card {
+        align-items: center;
+        width:100vw ;
+    }
+}
+} 

@@ -36,7 +36,7 @@ class UserProducts extends Component{
               key: item.id,
               refreshData: this.props.refreshCurrentUser,
             }
-            return <UserProduct {...props}/>
+            return <UserProduct openModal={this.openModal} {...props}/>
           })
         }
         </Container>

@@ -546,6 +546,21 @@ a {
 .carousel-container {
   background-color: #f2f2f2;
   width: 100%;
+  overflow: hidden;
+}
+
+.hContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.hScroller {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
 }
 
 .carousel-container2 {
@@ -2037,6 +2052,18 @@ li.react-multi-carousel-item.CarousalItem.carousel-item-padding-40-px {
 @media (min-width: 576px) {
   .container {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .hScroller .Item {
+    margin-right: -40%;
+  }
+  .hScroller .Item .card {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100vw;
   }
 }
 /*# sourceMappingURL=App.css.map */

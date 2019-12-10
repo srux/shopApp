@@ -7,10 +7,14 @@ import axios from 'axios';
 // var url = 'http://localhost:4001/api';
 // var server = 'http://localhost:4001/';
 
+var url = 'https://c146314c.au.ngrok.io/api';
+var server = 'https://c146314c.au.ngrok.io/';
 
+// var url = 'https://quick-tiger-49.localtunnel.me/api';
+// var server = 'https://quick-tiger-49.localtunnel.me/';
 
-var url = 'https://shopappapi.appspot.com/api';
-var server = 'https://shopappapi.appspot.com/';
+// var url = 'https://shopappapi.appspot.com/api';
+// var server = 'https://shopappapi.appspot.com/';
 
 
 var api = {

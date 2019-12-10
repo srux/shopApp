@@ -19,6 +19,7 @@
     "react-firestore": "^1.0.1",
     "react-form-validator-core": "^0.6.4",
     "react-icons": "^3.7.0",
+    "react-indiana-drag-scroll": "^1.5.2",
     "react-multi-carousel": "^2.2.5",
     "react-responsive-modal": "^4.0.1",
     "react-router-bootstrap": "^0.25.0",

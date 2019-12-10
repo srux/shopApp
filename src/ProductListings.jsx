@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import ScrollContainer from 'react-indiana-drag-scroll'
+
 import Item from './Item';
 import {Link} from '@reach/router';
 import {api} from './API';
@@ -67,11 +69,15 @@ class ProductListings extends Component {
 
             <div className="Item carousel-container">
                 <h3>Featured</h3>
-                <Carousel swipeable={true} draggable={false} showDots={true} responsive={responsive} ssr={true}
+                {/* <Carousel swipeable={true} draggable={false} showDots={true} responsive={responsive} ssr={true}
                     // means to render carousel on server-side.
                     infinite={true} autoPlay={this.props.deviceType !== "mobile"
                         ? false
-                        : false} autoPlaySpeed={1000} keyBoardControl={true} customTransition="ease all .5s" transitionDuration={500} containerClass="carousel-container" removeArrowOnDeviceType={["tablet", "mobile"]} deviceType={this.props.deviceType} dotListClass="custom-dot-list-style" itemClass="CarousalItem carousel-item-padding-40-px" partialVisbile={true}>
+                        : false} autoPlaySpeed={1000} keyBoardControl={true} customTransition="ease all .5s" transitionDuration={500} containerClass="carousel-container" removeArrowOnDeviceType={["tablet", "mobile"]} deviceType={this.props.deviceType} dotListClass="custom-dot-list-style" itemClass="CarousalItem carousel-item-padding-40-px" partialVisbile={false}> */}
+                <div className="hContainer">
+                <ScrollContainer className="hScroller">
+               
+                    
                     <div className="Item">
                         <Card>
                         <Link to="/featured"><Card.Img variant="featured" src={require('./suit1.png')}/></Link>
@@ -172,7 +178,9 @@ class ProductListings extends Component {
                             </Card.Body>
                         </Card>
                     </div>
-                </Carousel>
+                    </ScrollContainer>
+                </div>
+                {/* </Carousel> */}
                 <Container className="productsListing-Container">
                     <Row className="productsListing">
                         {

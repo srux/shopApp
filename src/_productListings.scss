@@ -5,6 +5,17 @@
 .carousel-container {
     background-color: $color-1;
     width: 100%;
+    overflow: hidden;
+}
+
+.hContainer {
+    display: flex;
+    width: 100%;
+}
+
+.hScroller {
+    display: flex;
+    overflow-x: scroll;
 }
 
 .carousel-container2 {
@@ -213,3 +224,5 @@
         border-bottom: solid thin $color-4; 
     }
 }
+
+
