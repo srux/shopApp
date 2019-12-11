@@ -109,7 +109,7 @@ refreshCurrentUser = ()=>
       var {categories} = this.state;
       
     return(
-
+<Container className="App">
 <Container className="wrap">
     <Scrollbars autoHideTimeout={0} autoHideDuration={0}>
     <Container className="modalStyle">
@@ -233,7 +233,7 @@ refreshCurrentUser = ()=>
           </Scrollbars>
           <Footer/>
         </Container>
-
+        </Container>
     );
   }
 }
