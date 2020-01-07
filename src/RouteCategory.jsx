@@ -28,7 +28,7 @@ class RouteCat extends Component {
     componentDidUpdate(prevProps, prevState){
         var {id} = this.props
         
-        if (id != prevProps.id){
+        if (id !== prevProps.id){
             this.routeGetCat(id)
         }
     }

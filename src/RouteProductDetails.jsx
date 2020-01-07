@@ -49,6 +49,7 @@ class RouteProductDetails extends Component {
 
     closeLoginModal = () => {
         this.setState({mLogin: false});
+        window.location.reload();
     }
 
     openCreditModal = () => {
@@ -146,9 +147,9 @@ class RouteProductDetails extends Component {
             <div className="loginModal">
                     <span>
                         <h6>Login / Register to Buy & Sell</h6>
-                        <a href="javascript:void(0);" onClick={() => this.closeLoginModal()}>
+                        <p onClick={() => this.closeLoginModal()}>
                             <i className="far fa-window-close"></i>
-                        </a>
+                        </p>
                     </span>
                     <Login
                         closeModal={this.closeLoginModal}

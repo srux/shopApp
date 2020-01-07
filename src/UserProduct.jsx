@@ -34,7 +34,7 @@ class UserProduct extends Component{
     var {id,photos,refreshData} = this.props;
 
     var data = {
-      photos: photos.filter(item => item!=photo)
+      photos: photos.filter(item => item!==photo)
       // console.log()
     }
 
@@ -104,9 +104,9 @@ class UserProduct extends Component{
   onClickAway={() => this.closeModal()}>
   <div className="deleteModal">
       <span>
-          <a href="javascript:void(0);" onClick={() => this.closeModal()}>
+          <p onClick={() => this.closeModal()}>
           <MdClose/>
-          </a>
+          </p>
       </span>
       <h3>Are You Sure You Want To Delete This Product?</h3>
       <div class="buttons">

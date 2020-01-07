@@ -4,7 +4,7 @@ import ScrollContainer from 'react-indiana-drag-scroll'
 import Item from './Item';
 import {Link} from '@reach/router';
 import {api} from './API';
-import Carousel from 'react-multi-carousel';
+// import Carousel from 'react-multi-carousel';
 import {
     Col,
     Card,

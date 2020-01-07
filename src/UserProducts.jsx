@@ -19,6 +19,7 @@ class UserProducts extends Component{
 
   closeModal = () => {
     this.setState({visible: false});
+    window.location.reload();
   }
 
   render(){
@@ -50,9 +51,9 @@ class UserProducts extends Component{
           onClickAway={() => this.closeModal()}>
           <div className="deleteModal">
               <span>
-                  <a href="javascript:void(0);" onClick={() => this.closeModal()}>
+                  <p onClick={() => this.closeModal()}>
                   <MdClose/>
-                  </a>
+                  </p>
               </span>
               <h3>Are You Sure You Want To Delete This Product?</h3>
               <div class="buttons">

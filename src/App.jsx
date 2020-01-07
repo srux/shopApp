@@ -115,7 +115,7 @@ refreshCurrentUser = ()=>
     <Container className="modalStyle">
         <Modal
             visible={this.state.visible}
-            width="95%"
+            width="425px"
             height="80%"
             effect="fadeInUp"
             onClickAway={() => this.closeModal()}>
@@ -123,9 +123,9 @@ refreshCurrentUser = ()=>
 
                 <span>
                     <h6>Login/Register to Buy & Sell</h6>
-                    <a onClick={() => this.closeModal()}>
+                    <p onClick={() => this.closeModal()}>
                     <IoIosClose/>
-                    </a>
+                    </p>
                 </span>
             <Login closeModal={this.closeModal} updateCurrentUser={this.updateCurrentUser}/>
 
