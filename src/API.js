@@ -16,7 +16,6 @@ var server = 'http://localhost:4001/';
 // var url = 'https://shopappapi.appspot.com/api';
 // var server = 'https://shopappapi.appspot.com/';
 
-
 var api = {
 
 
