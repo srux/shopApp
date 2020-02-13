@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from '@reach/router';
-import {api, server} from './API';
+import {api, server} from '../../API';
 import {Card,Col} from 'react-bootstrap';
 
 class Item extends Component{
@@ -26,7 +26,6 @@ class Item extends Component{
   addDefaultSrc(ev){
     ev.target.src = '/coming-soon.png'
   }
-
 
   render(){
     var {name, photos, id, price} = this.props;

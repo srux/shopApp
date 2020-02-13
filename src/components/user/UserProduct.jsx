@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from '@reach/router';
-import {api, server} from './API';
+import {api, server} from '../../API';
 import {Card, Container, Carousel, Button, ListGroup} from 'react-bootstrap';
 import Modal from 'react-awesome-modal';
 import {MdClose} from "react-icons/md";

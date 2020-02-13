@@ -1,5 +1,5 @@
 import React from 'react';
-import Item from './Item';
+import Item from '../products/Item';
 
 function SearchResults(props){
     let results = props.searchedItems.map((item)=> {

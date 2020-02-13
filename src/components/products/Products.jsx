@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Product from './UserProduct';
-import RouteProductDetailsReview from './RouteProductDetailsReview';
+import RouteProductDetailsReview from '../../routes/RouteProductDetailsReview';
 import {Router, Link, navigate} from '@reach/router';
-import {api} from './API';
+import {api} from '../../API';
 import {
   Card,
   Button,

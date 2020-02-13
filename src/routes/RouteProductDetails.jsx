@@ -10,11 +10,11 @@ import {
     Image,
     Carousel,
 } from 'react-bootstrap';
-import {api, server} from './API';
+import {api, server} from '../API';
 import Modal from 'react-awesome-modal';
-import TextValidator from './TextValidator';
+import TextValidator from '../TextValidator';
 import { ValidatorForm } from 'react-form-validator-core';
-import Login from './Login';
+import Login from '../components/user/Login';
 
 class RouteProductDetails extends Component {
     constructor(props) {

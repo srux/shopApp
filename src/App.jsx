@@ -1,20 +1,20 @@
 import React, {Component} from 'react';
-import ProductListings from './ProductListings';
-import AddProduct from './AddProduct';
-import EditProduct from './EditProduct';
-import Login from './Login';
-import UserProfile from './UserProfile';
-import UserProducts from './UserProducts';
-import RouteProductDetailsReview from './RouteProductDetailsReview';
-import RouteProductDetails from './RouteProductDetails';
-import PurchaseProductListings from './PurchaseProductListings';
-import RouteCat from './RouteCategory';
-import RouteThanks from './RouteThanks';
-import RouteFeaturedProduct from './RouteFeaturedProduct';
-import Footer from './Footer';
-import RouteProductSearch from './RouteProductSearch';
-import RouteOurStore from './RouteOurStore';
-import RouteErrorPage from './RouteErrorPage';
+import ProductListings from './components/products/ProductListings';
+import AddProduct from './components/products/AddProduct';
+import EditProduct from './components/products/EditProduct';
+import Login from './components/user/Login';
+import UserProfile from './components/user/UserProfile';
+import UserProducts from './components/user/UserProducts';
+import RouteProductDetailsReview from './routes/RouteProductDetailsReview';
+import RouteProductDetails from './routes/RouteProductDetails';
+import PurchaseProductListings from './components/user/PurchaseProductListings';
+import RouteCat from './routes/RouteCategory';
+import RouteThanks from './routes/RouteThanks';
+import RouteFeaturedProduct from './routes/RouteFeaturedProduct';
+import Footer from './components/footer/Footer';
+import RouteProductSearch from './routes/RouteProductSearch';
+import RouteOurStore from './routes/RouteOurStore';
+import RouteErrorPage from './routes/RouteErrorPage';
 
 import {
   Accordion,Nav,Navbar,Container,Card,Image
@@ -29,11 +29,6 @@ import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import { Scrollbars } from 'react-custom-scrollbars';
 
 import {api,server} from './API';
-
-
-
-
-
 class App extends Component{
   constructor(props){
   super(props);
@@ -45,12 +40,6 @@ class App extends Component{
       dropdownOpen: false,
     }
   }
-
-
-
-
- 
-
 
 openModal = () => {
     this.setState({visible: true});
@@ -143,7 +132,7 @@ refreshCurrentUser = ()=>
               
               <Container className="navBarbot">  
               
-              <Link to="/"><Image className="Logo" src={require('./logo.png')} fluid="fluid"/></Link>
+              <Link to="/"><Image className="Logo" src={require('./assets/logo.png')} fluid="fluid"/></Link>
                        {
                            
                            this.state.currentUser ?  null

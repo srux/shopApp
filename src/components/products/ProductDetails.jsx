@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 // import {Link, navigate} from '@reach/router';
-import Review from './Review';
-import {api, server} from './API';
+import Review from '../user/Review';
+import {api, server} from '../../API';
 
 class ProductDetails extends Component{
   constructor(props){

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 // import {Link, navigate} from '@reach/router'
 import {Form} from 'react-bootstrap';
-import {api} from './API';
+import {api} from '../../API';
 
 class Review extends Component {
 

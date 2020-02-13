@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {navigate} from '@reach/router';
-import {api} from './API';
+import {api} from '../../API';
 
 import {
 	Col,

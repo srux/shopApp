@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import UserProducts from './UserProducts';
 import PurchaseProductListings from './PurchaseProductListings';
-import {api, server} from './API';
+import {api, server} from '../../API';
 import Modal from 'react-awesome-modal';
 import SellerReviewProducts from './SellerReviewProducts';
 import {

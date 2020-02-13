@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Item from './Item';
-import {api} from './API';
+import Item from '../components/products/Item';
+import {api} from '../API';
 import {
     Container,
     Row,

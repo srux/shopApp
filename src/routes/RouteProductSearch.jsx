@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {api} from './API';
-import SearchResults from './SearchResults';
-import SearchBox from './SearchBox';
+import {api} from '../API';
+import SearchResults from '../components/search/SearchResults';
+import SearchBox from '../components/search/SearchBox';
 
 import {
     Row,

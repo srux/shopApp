@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 // import {Link, navigate} from '@reach/router';
-import Review from './Review';
+import Review from '../components/user/Review';
 import {Form,Button,ToggleButtonGroup,ToggleButton,Card, Carousel} from 'react-bootstrap';
-import {api, server} from './API';
-
-import './App.css';
+import {api, server} from '../API';
 
 class RouteProductDetailsReview extends Component{
   constructor(props){
