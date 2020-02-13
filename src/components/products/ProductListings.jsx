@@ -11,7 +11,8 @@ import {
     Image,
     Row,
     Jumbotron,
-    Container
+    Container,
+    Button
 } from 'react-bootstrap';
 
 const responsive = {
@@ -45,13 +46,81 @@ class ProductListings extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            products: []
+            products: [],
+            priceBy:false
         }
     }
 
+    handleProductsSortName = e => {
+        e.preventDefault();
+        let array = this.state.products;
+        if (this.state.sorted === false) {
+            array.sort((a, b) => {
+                if (a.name < b.name) {
+                    return -1;
+                }
+                if (a.name > b.name) {
+                    return 1;
+                }
+                return 0;
+            });
+        } else {
+            array.sort((a, b) => {
+                if (a.name > b.name) {
+                    return -1;
+                }
+                if (a.name < b.name) {
+                    return 1;
+                }
+                return 0;
+            });
+        }
+    
+        this.setState({ products: array });
+        this.setState(prevState => ({ sorted: !prevState.sorted }))
+    };
+    
+    handleProductsSortPrice = e => {
+        e.preventDefault();
+        let array = this.state.products;
+        if (this.state.sorted === false) {
+            array.sort((a, b) => {
+                if (a.price < b.price) {
+                    return -1;
+                }
+                if (a.price > b.price) {
+                    return 1;
+                }
+                return 0;
+            });
+        } else {
+            array.sort((a, b) => {
+                if (a.price > b.price) {
+                    return -1;
+                }
+                if (a.price < b.price) {
+                    return 1;
+                }
+                return 0;
+            });
+        }
+    
+        this.setState({ 
+            products: array,
+        });
+        this.setState(prevState => ({ 
+            sorted: !prevState.sorted, 
+        }));
+        
+
+        };
+        
+      
+    
+
     getProducts = () => {
-        api
-            .getProducts()
+        api.getProducts()
+
             .then(res => {
                 this.setState({products: res.data})
             })
@@ -62,7 +131,7 @@ class ProductListings extends Component {
     }
 
     render() {
-        var {
+        let {
             products
         } = this.state;
         return (
@@ -73,145 +142,164 @@ class ProductListings extends Component {
                     // means to render carousel on server-side.
                     infinite={true} autoPlay={this.props.deviceType !== "mobile"
                         ? false
-                        : false} autoPlaySpeed={1000} keyBoardControl={true} customTransition="ease all .5s" transitionDuration={500} containerClass="carousel-container" removeArrowOnDeviceType={["tablet", "mobile"]} deviceType={this.props.deviceType} dotListClass="custom-dot-list-style" itemClass="CarousalItem carousel-item-padding-40-px" partialVisbile={false}> */}
+                        : false} autoPlaySpeed={1000} keyBoardControl={true} customTransition="ease all .5s" transitionDuration={500} containerClass="carousel-container" removeArrowOnDeviceType={["tablet", "mobile"]} deviceType={this.props.deviceType} dotListClass="custom-dot-list-style" itemClass="CarousalItem carousel-item-padding-40-px" partialVisbile={false}> */
+                }
                 <div className="hContainer">
-                <ScrollContainer className="hScroller">
-               
-                    
-                    <div className="Item">
-                        <Card>
-                        <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/suit1.png')}/></Link>
-                            <Card.Body>
-                                <Card.Title>Dries Van Noten Pin Stripe
-                                </Card.Title>
+                    <ScrollContainer className="hScroller">
 
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div className="Item">
-                        <Card>
-                        <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/watch1.png')}/></Link>
-                            <Card.Body>
-                                <Card.Title>Lorem ipsum dolor
-                                </Card.Title>
+                        <div className="Item">
+                            <Card>
+                                <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/suit1.png')}/></Link>
+                                <Card.Body>
+                                    <Card.Title>Dries Van Noten Pin Stripe
+                                    </Card.Title>
 
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div className="Item">
-                        <Card>
-                        <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/suit2.png')}/></Link>
-                            <Card.Body>
-                                <Card.Title>Ut ut gravida augue
-                                </Card.Title>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                        <div className="Item">
+                            <Card>
+                                <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/watch1.png')}/></Link>
+                                <Card.Body>
+                                    <Card.Title>Lorem ipsum dolor
+                                    </Card.Title>
 
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div className="Item">
-                        <Card>
-                            <Card.Img variant="featured" src={require('../../assets/footwear1.png')}/>
-                            <Card.Body>
-                                <Card.Title>Curabitur vitae
-                                </Card.Title>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                        <div className="Item">
+                            <Card>
+                                <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/suit2.png')}/></Link>
+                                <Card.Body>
+                                    <Card.Title>Ut ut gravida augue
+                                    </Card.Title>
 
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div className="Item">
-                        <Card>
-                            <Card.Img variant="featured" src={require('../../assets/suit3.png')}/>
-                            <Card.Body>
-                                <Card.Title>Suspendisse massa
-                                </Card.Title>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                        <div className="Item">
+                            <Card>
+                                <Card.Img variant="featured" src={require('../../assets/footwear1.png')}/>
+                                <Card.Body>
+                                    <Card.Title>Curabitur vitae
+                                    </Card.Title>
 
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div className="Item">
-                        <Card>
-                        <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/watch2.png')}/></Link>
-                            <Card.Body>
-                                <Card.Title>Sed vel consequat ligula
-                                </Card.Title>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                        <div className="Item">
+                            <Card>
+                                <Card.Img variant="featured" src={require('../../assets/suit3.png')}/>
+                                <Card.Body>
+                                    <Card.Title>Suspendisse massa
+                                    </Card.Title>
 
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div className="Item">
-                        <Card>
-                        <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/footwear2.png')}/></Link>
-                            <Card.Body>
-                                <Card.Title>Aliquam egestas
-                                </Card.Title>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                        <div className="Item">
+                            <Card>
+                                <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/watch2.png')}/></Link>
+                                <Card.Body>
+                                    <Card.Title>Sed vel consequat ligula
+                                    </Card.Title>
 
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div className="Item">
-                        <Card>
-                        <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/suit4.png')}/></Link>
-                            <Card.Body>
-                                <Card.Title>Praesent quis est
-                                </Card.Title>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                        <div className="Item">
+                            <Card>
+                                <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/footwear2.png')}/></Link>
+                                <Card.Body>
+                                    <Card.Title>Aliquam egestas
+                                    </Card.Title>
 
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div className="Item">
-                        <Card>
-                        <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/footwear3.png')}/></Link>
-                            <Card.Body>
-                                <Card.Title>Interdum et malesuada
-                                </Card.Title>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                        <div className="Item">
+                            <Card>
+                                <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/suit4.png')}/></Link>
+                                <Card.Body>
+                                    <Card.Title>Praesent quis est
+                                    </Card.Title>
 
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div className="Item">
-                        <Card>
-                        <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/watch3.png')}/></Link>
-                            <Card.Body>
-                                <Card.Title>Sed ligula risus
-                                </Card.Title>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                        <div className="Item">
+                            <Card>
+                                <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/footwear3.png')}/></Link>
+                                <Card.Body>
+                                    <Card.Title>Interdum et malesuada
+                                    </Card.Title>
 
-                            </Card.Body>
-                        </Card>
-                    </div>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                        <div className="Item">
+                            <Card>
+                                <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/watch3.png')}/></Link>
+                                <Card.Body>
+                                    <Card.Title>Sed ligula risus
+                                    </Card.Title>
+
+                                </Card.Body>
+                            </Card>
+                        </div>
                     </ScrollContainer>
                 </div>
                 {/* </Carousel> */}
                 <Container className="productsListing-Container">
+                    <Row className="filter">
+                        <Button
+                            className="filter-button"
+                            onClick={this.handleProductsSortName}
+                            value="pants">Sort A-Z</Button>
+                        <Button
+                            className="filter-button"
+                            onClick={this.handleProductsSortPrice}
+                            value="footwear">Sort by Price</Button>
+                    </Row>
+                      
                     <Row className="productsListing">
                         {
-                            products.reverse().map((item) => {
-                                var itemProps = {
-                                    ...item,
-                                    key: item.id,
-                                    refreshData: this.getProducts
-                                }
-                                return <Item {...itemProps}/>
+                            products
+                                .map((item) => {
+                                    let itemProps = {
+                                        ...item,
+                                        key: item.id,
+                                        refreshData: this.getProducts,
+                                    }
+                                    return <Item {...itemProps}/>
 
-                            })
+                                })
                         }
                     </Row>
                 </Container>
                 <Container className="imageGrid">
                     <Row>
                         <Jumbotron fluid="fluid">
-                        <Link to="/our-store"><Container>
-                                <h1>Our Store</h1>
-                                <p>
-                                    We stock a huge range of new & second hand trade in's. We check the listing matches
-                                    the product for quality assurance, verify and then list.
-                                </p>
-                            </Container></Link>
+                            <Link to="/our-store">
+                                <Container>
+                                    <h1>Our Store</h1>
+                                    <p>
+                                        We stock a huge range of new & second hand trade in's. We check the listing
+                                        matches the product for quality assurance, verify and then list.
+                                    </p>
+                                </Container>
+                            </Link>
                         </Jumbotron>
 
                     </Row>
                     <Row>
-                        <Col><Link to="/categories/accessories"><Image src="/accessories.jpg" fluid="fluid"/></Link></Col>
-                        <Col><Link to="/categories/suits"><Image src="/suits.jpg" fluid="fluid"/></Link><Link to="/categories/footwear"><Image src="/footwear.jpg" fluid="fluid"/></Link></Col>
+                        <Col>
+                            <Link to="/categories/accessories"><Image src="/accessories.jpg" fluid="fluid"/></Link>
+                        </Col>
+                        <Col>
+                            <Link to="/categories/suits"><Image src="/suits.jpg" fluid="fluid"/></Link>
+                            <Link to="/categories/footwear"><Image src="/footwear.jpg" fluid="fluid"/></Link>
+                        </Col>
                     </Row>
                 </Container>
             </div>

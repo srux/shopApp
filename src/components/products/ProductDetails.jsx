@@ -1,47 +1,52 @@
 import React, {Component} from 'react';
-// import {Link, navigate} from '@reach/router';
-import Review from '../user/Review';
 import {api, server} from '../../API';
 
-class ProductDetails extends Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      product:null,
+class ProductDetails extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            product: null
+        }
     }
-  }
-  routeGetProduct = (id) => {
-    api.getProduct(id).then(res => this.setState({product:res.data}))
-  }
-
-  componentDidMount(){
-    var {id} = this.props
-    //console.log(id);
-    this.routeGetProduct(id)
-  }
-  handleReviewFormSubmit = (e) => {
-    e.preventDefault();
-
-    var formData = new FormData(this.reviewForm);
-
-    var productId = this.props.id;
-
-    var data = {
-      comment:formData.get('comment-input'),
-      rating:formData.get('rating-input'),
-      prod_id: productId,
-      // user_id: this.props.currentUser.id
+    routeGetProduct = (id) => {
+        api
+            .getProduct(id)
+            .then(res => this.setState({product: res.data}))
     }
-    api.addReview(data).then(res => {
-      this.reviewForm.reset()
-      this.routeGetProduct(productId)
-    })
-  }
 
-  addDefaultSrc(ev){
-    ev.target.src = '/coming-soon.png'
-  }
+    componentDidMount() {
+        var {
+            id
+        } = this.props
+        //console.log(id);
+        this.routeGetProduct(id)
+    }
+    handleReviewFormSubmit = (e) => {
+        e.preventDefault();
 
+        var formData = new FormData(this.reviewForm);
+
+        var productId = this.props.id;
+
+        var data = {
+            comment: formData.get('comment-input'),
+            rating: formData.get('rating-input'),
+            prod_id: productId,
+            // user_id: this.props.currentUser.id
+        }
+        api
+            .addReview(data)
+            .then(res => {
+                this
+                    .reviewForm
+                    .reset()
+                this.routeGetProduct(productId)
+            })
+    }
+
+    addDefaultSrc(ev) {
+        ev.target.src = '/coming-soon.png'
+    }
 
   render(){
     var {product} = this.state;

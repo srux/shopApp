@@ -31,7 +31,10 @@
     }
 }
 #cat-input {
-    width: 50%;
+    width: 100%;
+    border: none;
+    border-bottom: thin solid black;
+    border-radius: 0;
     option {
         font-size: 1em;
         display: flex;
@@ -52,6 +55,18 @@
         border-radius: 0;
         color: $color-6;
         font-weight: 500;
+    }
+}
+
+.price-input-group {
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    .input-group-text {
+        background-color:white;
+        border:none;
+        border-bottom:solid thin black;
+        border-radius: 0;
     }
 }
 
@@ -340,7 +355,39 @@
     display: flex;
     align-items: center;
 }
+.filter {
+    border-bottom:solid thin #cdcdcd;
+    display:flex;
+    justify-content: flex-end;
+ 
+    .filter-button {
+        background-color: white;
+        color: #b19a55;
+        border: none;
+        border-radius: 0;
+        font-size: .9em;
+    }
 
-// .productPrice.card-text {
-//     justify-content: space-around;
-// }
+    .filter-button:hover {
+        background-color: #dcdcdc;
+    }
+
+}
+
+button.filter-button.btn.btn-primary:active {
+    background-color: #cdcdcd;
+    color: #b19a55;
+    border: none;
+    border-radius: 0;
+    font-size: .9em;
+    box-shadow:none;
+}
+
+button.filter-button.btn.btn-primary:focus {
+    background-color: white;
+    color: #b19a55;
+    border: none;
+    border-radius: 0;
+    font-size: .9em;
+    box-shadow:none;
+}

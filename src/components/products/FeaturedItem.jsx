@@ -10,21 +10,30 @@ class FeaturedItem extends Component {
     }
 
     deleteProduct = () => {
-        var {id, refreshData} = this.props;
+        var {
+            id,
+            refreshData
+        } = this.props;
         api
             .deleteProduct(id)
             .then(() => refreshData())
     }
 
     render() {
-        var {name, description, price, photo, id} = this.props;
+        var {
+            name,
+            description,
+            price,
+            photo,
+            id
+        } = this.props;
 
         return (
 
             <div className="Item">
                 <Card style={{
-                    width: '18rem'
-                }}>
+                        width: '18rem'
+                    }}>
                     <Link to={'/products/' + id}><Card.Img variant="featured" src={require('./suit1.png')}/></Link>
                     <Card.Body>
                         <Card.Title>

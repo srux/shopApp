@@ -35,6 +35,10 @@ h1 {
     margin-top: .3em;
 }
 
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+
 .container {
     padding:0;
 }
@@ -121,11 +125,11 @@ a {
 }
 
 .wrap.container {
-    max-width: 434px;
-    max-height: 800px;
-    border-radius:.5em;
-    box-shadow:.5em 1em 1em rgba(0, 0, 0, 0.226);
-    border:solid thin #cdcdcd;
+    max-width: 35em;
+    max-height: 60em;
+    // border-radius:.5em;
+    // box-shadow:.5em 1em 1em rgba(0, 0, 0, 0.226);
+    // border:solid thin #cdcdcd;
 }
 
 

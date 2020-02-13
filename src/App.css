@@ -25,6 +25,11 @@ h1 {
   margin-top: .3em;
 }
 
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .container {
   padding: 0;
 }
@@ -109,7 +114,10 @@ a {
 }
 
 #cat-input {
-  width: 50%;
+  width: 100%;
+  border: none;
+  border-bottom: thin solid black;
+  border-radius: 0;
 }
 
 #cat-input option {
@@ -142,6 +150,24 @@ a {
   border-radius: 0;
   color: #0c0c0c;
   font-weight: 500;
+}
+
+.price-input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.price-input-group .input-group-text {
+  background-color: white;
+  border: none;
+  border-bottom: solid thin black;
+  border-radius: 0;
 }
 
 .editButton {
@@ -535,6 +561,48 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.filter {
+  border-bottom: solid thin #cdcdcd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.filter .filter-button {
+  background-color: white;
+  color: #b19a55;
+  border: none;
+  border-radius: 0;
+  font-size: .9em;
+}
+
+.filter .filter-button:hover {
+  background-color: #dcdcdc;
+}
+
+button.filter-button.btn.btn-primary:active {
+  background-color: #cdcdcd;
+  color: #b19a55;
+  border: none;
+  border-radius: 0;
+  font-size: .9em;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+button.filter-button.btn.btn-primary:focus {
+  background-color: white;
+  color: #b19a55;
+  border: none;
+  border-radius: 0;
+  font-size: .9em;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .react-multi-carousel-item {
@@ -1586,12 +1654,8 @@ a {
 }
 
 .wrap.container {
-  max-width: 434px;
-  max-height: 800px;
-  border-radius: .5em;
-  -webkit-box-shadow: 0.5em 1em 1em rgba(0, 0, 0, 0.226);
-          box-shadow: 0.5em 1em 1em rgba(0, 0, 0, 0.226);
-  border: solid thin #cdcdcd;
+  max-width: 35em;
+  max-height: 60em;
 }
 
 .Header {
