@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ProductListings from './components/products/ProductListings';
+import Home from './Home';
 import AddProduct from './components/products/AddProduct';
 import EditProduct from './components/products/EditProduct';
 import Login from './components/user/Login';
@@ -203,7 +203,7 @@ refreshCurrentUser = ()=>
           </Container>
           <Router>
             <RouteProductSearch path="/search"/>
-            <ProductListings path="/"/>
+            <Home path="/"/>
             <RouteCat path="/categories/:id"/>
             { this.state.currentUser ?<UserProducts path="/products" user={this.state.currentUser} refreshCurrentUser={this.refreshCurrentUser}/> : null}
             { this.state.currentUser ?<AddProduct path="/products/new"user={this.state.currentUser} refreshCurrentUser={this.refreshCurrentUser}/> : null}

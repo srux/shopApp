@@ -4,7 +4,7 @@ import {api, server} from '../../API';
 import {Card, Col} from 'react-bootstrap';
 import NumberFormat from 'react-number-format';
 
-class Item extends Component {
+class Product extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -38,33 +38,35 @@ class Item extends Component {
 
     render() {
         var {
-            products
+            name,
+            photos,
+            id,
+            price
         } = this.props;
 
         return (
-            products.map((item) => {
-                return ( this.state.purchaser_id ? null : 
+
+            this.state.purchaser_id
+                ? null
+                : (
                     <Col>
                         <Card>
-                            <Link to={'/products/' + item.id}>
+                            <Link to={'/products/' + id}>
                             
-                                <NumberFormat className="itemPrice" value={item.price} displayType={'text'} thousandSeparator={true} renderText={value => <div>{"$ "+value}</div>} />
+                                <NumberFormat className="itemPrice" value={price} displayType={'text'} thousandSeparator={true} renderText={value => <div>{"$ "+value}</div>} />
                                 {/* <Card.Text className="itemPrice">${price}</Card.Text> */}
-                                <Card.Img variant="top" src={server + item.photos[0]} onError={this.addDefaultSrc}/>
+                                <Card.Img variant="top" src={server + photos[0]} onError={this.addDefaultSrc}/>
                             </Link>
                             <Card.Body>
                                 <Card.Title>
-                                    <Link to={'/products/' + item.id}>{item.name}</Link>
+                                    <Link to={'/products/' + id}>{name}</Link>
                                 </Card.Title>
-
                             </Card.Body>
                         </Card>
                     </Col>
-                
-                )}
-            )
+                )
         );
     }
 }
 
-export default Item;
+export default Product;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Item from '../products/Item';
+import Product from '../products/Product';
 
 function SearchResults(props){
     let results = props.searchedItems.map((item)=> {
@@ -7,7 +7,7 @@ function SearchResults(props){
             ...item,
             key: item.id,
         }
-        return <Item {...itemProps}/>
+        return <Product {...itemProps}/>
     })
     return (
         <>

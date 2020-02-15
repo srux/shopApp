@@ -355,39 +355,3 @@
     display: flex;
     align-items: center;
 }
-.filter {
-    border-bottom:solid thin #cdcdcd;
-    display:flex;
-    justify-content: flex-end;
- 
-    .filter-button {
-        background-color: white;
-        color: #b19a55;
-        border: none;
-        border-radius: 0;
-        font-size: .9em;
-    }
-
-    .filter-button:hover {
-        background-color: #dcdcdc;
-    }
-
-}
-
-button.filter-button.btn.btn-primary:active {
-    background-color: #cdcdcd;
-    color: #b19a55;
-    border: none;
-    border-radius: 0;
-    font-size: .9em;
-    box-shadow:none;
-}
-
-button.filter-button.btn.btn-primary:focus {
-    background-color: white;
-    color: #b19a55;
-    border: none;
-    border-radius: 0;
-    font-size: .9em;
-    box-shadow:none;
-}

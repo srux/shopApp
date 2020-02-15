@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import ScrollContainer from 'react-indiana-drag-scroll'
-
-import Item from './Item';
+import ScrollContainer from 'react-indiana-drag-scroll';
+import ProductsListing from './components/products/ProductsListing';
 import {Link} from '@reach/router';
-import {api} from '../../API';
+import {api} from './API';
 // import Carousel from 'react-multi-carousel';
 import {
     Col,
@@ -42,98 +41,16 @@ const responsive = {
     }
 }
 
-class ProductListings extends Component {
+class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            products: [],
-            priceBy:false
+  
         }
-    }
-
-    handleProductsSortName = e => {
-        e.preventDefault();
-        let array = this.state.products;
-        if (this.state.sorted === false) {
-            array.sort((a, b) => {
-                if (a.name < b.name) {
-                    return -1;
-                }
-                if (a.name > b.name) {
-                    return 1;
-                }
-                return 0;
-            });
-        } else {
-            array.sort((a, b) => {
-                if (a.name > b.name) {
-                    return -1;
-                }
-                if (a.name < b.name) {
-                    return 1;
-                }
-                return 0;
-            });
-        }
-    
-        this.setState({ products: array });
-        this.setState(prevState => ({ sorted: !prevState.sorted }))
-    };
-    
-    handleProductsSortPrice = e => {
-        e.preventDefault();
-        let array = this.state.products;
-        if (this.state.sorted === false) {
-            array.sort((a, b) => {
-                if (a.price < b.price) {
-                    return -1;
-                }
-                if (a.price > b.price) {
-                    return 1;
-                }
-                return 0;
-            });
-        } else {
-            array.sort((a, b) => {
-                if (a.price > b.price) {
-                    return -1;
-                }
-                if (a.price < b.price) {
-                    return 1;
-                }
-                return 0;
-            });
-        }
-    
-        this.setState({ 
-            products: array,
-        });
-        this.setState(prevState => ({ 
-            sorted: !prevState.sorted, 
-        }));
-        
-
-        };
-        
-      
-    
-
-    getProducts = () => {
-        api.getProducts()
-
-            .then(res => {
-                this.setState({products: res.data})
-            })
-    }
-
-    componentDidMount() {
-        this.getProducts()
     }
 
     render() {
-        let {
-            products
-        } = this.state;
+
         return (
 
             <div className="Item carousel-container">
@@ -149,7 +66,7 @@ class ProductListings extends Component {
 
                         <div className="Item">
                             <Card>
-                                <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/suit1.png')}/></Link>
+                                <Link to="/featured"><Card.Img variant="featured" src={require('./assets/suit1.png')}/></Link>
                                 <Card.Body>
                                     <Card.Title>Dries Van Noten Pin Stripe
                                     </Card.Title>
@@ -159,7 +76,7 @@ class ProductListings extends Component {
                         </div>
                         <div className="Item">
                             <Card>
-                                <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/watch1.png')}/></Link>
+                                <Link to="/featured"><Card.Img variant="featured" src={require('./assets/watch1.png')}/></Link>
                                 <Card.Body>
                                     <Card.Title>Lorem ipsum dolor
                                     </Card.Title>
@@ -169,7 +86,7 @@ class ProductListings extends Component {
                         </div>
                         <div className="Item">
                             <Card>
-                                <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/suit2.png')}/></Link>
+                                <Link to="/featured"><Card.Img variant="featured" src={require('./assets/suit2.png')}/></Link>
                                 <Card.Body>
                                     <Card.Title>Ut ut gravida augue
                                     </Card.Title>
@@ -179,7 +96,7 @@ class ProductListings extends Component {
                         </div>
                         <div className="Item">
                             <Card>
-                                <Card.Img variant="featured" src={require('../../assets/footwear1.png')}/>
+                                <Card.Img variant="featured" src={require('./assets/footwear1.png')}/>
                                 <Card.Body>
                                     <Card.Title>Curabitur vitae
                                     </Card.Title>
@@ -189,7 +106,7 @@ class ProductListings extends Component {
                         </div>
                         <div className="Item">
                             <Card>
-                                <Card.Img variant="featured" src={require('../../assets/suit3.png')}/>
+                                <Card.Img variant="featured" src={require('./assets/suit3.png')}/>
                                 <Card.Body>
                                     <Card.Title>Suspendisse massa
                                     </Card.Title>
@@ -199,7 +116,7 @@ class ProductListings extends Component {
                         </div>
                         <div className="Item">
                             <Card>
-                                <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/watch2.png')}/></Link>
+                                <Link to="/featured"><Card.Img variant="featured" src={require('./assets/watch2.png')}/></Link>
                                 <Card.Body>
                                     <Card.Title>Sed vel consequat ligula
                                     </Card.Title>
@@ -209,7 +126,7 @@ class ProductListings extends Component {
                         </div>
                         <div className="Item">
                             <Card>
-                                <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/footwear2.png')}/></Link>
+                                <Link to="/featured"><Card.Img variant="featured" src={require('./assets/footwear2.png')}/></Link>
                                 <Card.Body>
                                     <Card.Title>Aliquam egestas
                                     </Card.Title>
@@ -219,7 +136,7 @@ class ProductListings extends Component {
                         </div>
                         <div className="Item">
                             <Card>
-                                <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/suit4.png')}/></Link>
+                                <Link to="/featured"><Card.Img variant="featured" src={require('./assets/suit4.png')}/></Link>
                                 <Card.Body>
                                     <Card.Title>Praesent quis est
                                     </Card.Title>
@@ -229,7 +146,7 @@ class ProductListings extends Component {
                         </div>
                         <div className="Item">
                             <Card>
-                                <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/footwear3.png')}/></Link>
+                                <Link to="/featured"><Card.Img variant="featured" src={require('./assets/footwear3.png')}/></Link>
                                 <Card.Body>
                                     <Card.Title>Interdum et malesuada
                                     </Card.Title>
@@ -239,7 +156,7 @@ class ProductListings extends Component {
                         </div>
                         <div className="Item">
                             <Card>
-                                <Link to="/featured"><Card.Img variant="featured" src={require('../../assets/watch3.png')}/></Link>
+                                <Link to="/featured"><Card.Img variant="featured" src={require('./assets/watch3.png')}/></Link>
                                 <Card.Body>
                                     <Card.Title>Sed ligula risus
                                     </Card.Title>
@@ -249,34 +166,11 @@ class ProductListings extends Component {
                         </div>
                     </ScrollContainer>
                 </div>
-                {/* </Carousel> */}
-                <Container className="productsListing-Container">
-                    <Row className="filter">
-                        <Button
-                            className="filter-button"
-                            onClick={this.handleProductsSortName}
-                            value="pants">Sort A-Z</Button>
-                        <Button
-                            className="filter-button"
-                            onClick={this.handleProductsSortPrice}
-                            value="footwear">Sort by Price</Button>
-                    </Row>
-                      
-                    <Row className="productsListing">
-                        {
-                            products
-                                .map((item) => {
-                                    let itemProps = {
-                                        ...item,
-                                        key: item.id,
-                                        refreshData: this.getProducts,
-                                    }
-                                    return <Item {...itemProps}/>
 
-                                })
-                        }
-                    </Row>
-                </Container>
+
+                        <ProductsListing/>
+                        
+                
                 <Container className="imageGrid">
                     <Row>
                         <Jumbotron fluid="fluid">
@@ -309,4 +203,4 @@ class ProductListings extends Component {
 
 }
 
-export default ProductListings;
+export default Home;

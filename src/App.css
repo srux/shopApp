@@ -563,58 +563,142 @@ a {
           align-items: center;
 }
 
-.filter {
-  border-bottom: solid thin #cdcdcd;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.filter .filter-button {
-  background-color: white;
-  color: #b19a55;
-  border: none;
-  border-radius: 0;
-  font-size: .9em;
-}
-
-.filter .filter-button:hover {
-  background-color: #dcdcdc;
-}
-
-button.filter-button.btn.btn-primary:active {
-  background-color: #cdcdcd;
-  color: #b19a55;
-  border: none;
-  border-radius: 0;
-  font-size: .9em;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-button.filter-button.btn.btn-primary:focus {
-  background-color: white;
-  color: #b19a55;
-  border: none;
-  border-radius: 0;
-  font-size: .9em;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
 .react-multi-carousel-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
+.loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 73.4vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+  background-color: white;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: absolute;
+  z-index: 9999;
+}
+
+.loading.hide {
+  display: none;
+}
+
 .carousel-container {
   background-color: #f2f2f2;
   width: 100%;
   overflow: hidden;
+}
+
+ul.pagination {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+}
+
+ul.pagination li.active {
+  background-color: #e2e2e2;
+}
+
+ul.pagination li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 1%;
+          flex: 1 0 1%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+ul.pagination li a {
+  padding: 0.5em .7em;
+  border-bottom: solid thin #A68B3C;
+  margin: .3em;
+}
+
+ul.pagination li a:focus {
+  color: #A68B3C;
+  text-decoration: none;
+  outline: none;
+}
+
+ul.pagination li a:hover {
+  background-color: #dcdcdc;
+  color: #A68B3C;
+  cursor: pointer;
+}
+
+ul.pagination li svg {
+  font-size: 1.5em;
+}
+
+ul.pagination li svg:hover {
+  font-size: 1.5em;
+  color: #A68B3C;
+}
+
+ul.pagination li.previous {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 40%;
+          flex: 1 0 40%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: left;
+  padding: 0;
+  border-bottom: none;
+}
+
+ul.pagination li.previous a {
+  border-bottom: none;
+}
+
+ul.pagination li.next {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 40%;
+          flex: 1 0 40%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-align: right;
+  padding: 0;
+}
+
+ul.pagination li.next a {
+  border-bottom: none;
+}
+
+.swipeHandler {
+  height: 100%;
 }
 
 .hContainer {
@@ -726,6 +810,65 @@ button.filter-button.btn.btn-primary:focus {
 
 .listings h1 {
   text-align: center;
+}
+
+.filter {
+  border-bottom: solid thin #cdcdcd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.filter .filter-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+  width: 47%;
+  background-color: white;
+}
+
+.filter .filter-button {
+  background-color: white;
+  color: #b19a55;
+  border: none;
+  border-radius: 0;
+  font-size: .9em;
+}
+
+.filter .filter-button:hover {
+  background-color: #dcdcdc;
+}
+
+button.filter-button.btn.btn-primary:active {
+  background-color: #cdcdcd;
+  color: #b19a55;
+  border: none;
+  border-radius: 0;
+  font-size: .9em;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+button.filter-button.btn.btn-primary:focus {
+  background-color: white;
+  color: #b19a55;
+  border: none;
+  border-radius: 0;
+  font-size: .9em;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .categoryContainer .noListing {
