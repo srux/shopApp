@@ -4,11 +4,11 @@ import axios from 'axios';
 // var url = 'ec2-52-62-211-212.ap-southeast-2.compute.amazonaws.com:4001';
 // var server = 'ec2-52-62-211-212.ap-southeast-2.compute.amazonaws.com:4001';
 
-var url = 'http://localhost:4001/api';
-var server = 'http://localhost:4001/';
+// var url = 'http://localhost:4001/api';
+// var server = 'http://localhost:4001/';
 
-// var url = 'https://c146314c.au.ngrok.io/api';
-// var server = 'https://c146314c.au.ngrok.io/';
+var url = 'https://3b0fc7ac.au.ngrok.io/api';
+var server = 'https://3b0fc7ac.au.ngrok.io/';
 
 // var url = 'https://quick-tiger-49.localtunnel.me/api';
 // var server = 'https://quick-tiger-49.localtunnel.me/';

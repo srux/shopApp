@@ -1796,11 +1796,6 @@ button.filter-button.btn.btn-primary:focus {
   font-size: .9em;
 }
 
-.wrap.container {
-  max-width: 35em;
-  max-height: 60em;
-}
-
 .Header {
   position: relative;
   z-index: 9;
